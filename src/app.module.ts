@@ -9,9 +9,17 @@ import { PropertiesController } from './properties/properties.controller';
 import { PropertiesService } from './properties/properties.service';
 import { PropertiesModule } from './properties/properties.module';
 import { PrismaModule } from './prisma/prisma.module';
-
+import { ConfigModule } from '@nestjs/config';
 @Module({
-  imports: [AuthModule, ReviewsModule, PropertiesModule, PrismaModule],
+  imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
+    AuthModule,
+    ReviewsModule,
+    PropertiesModule,
+    PrismaModule,
+  ],
   controllers: [AppController, ReviewsController, PropertiesController],
   providers: [AppService, ReviewsService, PropertiesService],
 })
