@@ -41,11 +41,23 @@ export namespace $Enums {
 
 export type Status = (typeof Status)[keyof typeof Status]
 
+
+export const Role: {
+  USER: 'USER',
+  ADMIN: 'ADMIN'
+};
+
+export type Role = (typeof Role)[keyof typeof Role]
+
 }
 
 export type Status = $Enums.Status
 
 export const Status: typeof $Enums.Status
+
+export type Role = $Enums.Role
+
+export const Role: typeof $Enums.Role
 
 /**
  * ##  Prisma Client ʲˢ

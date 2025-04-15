@@ -20,6 +20,11 @@ enum Status {
   REJECTED
 }
 
+enum Role { 
+  USER
+  ADMIN
+}
+
 model Review {
   id        String   @id @default(cuid())
   rating    Int @default(0)
